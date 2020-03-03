@@ -104,11 +104,11 @@ Handle cookies[COOKIE_ENUM_COUNT];
 
 public void OnPluginStart()
 {
-    g_cAimThreshold = CreateConVar("sm_aimnote_vel_threshold", "32",
+    g_cAimThreshold = CreateConVar("sm_nitpick_vel_threshold", "32",
         "Max acceptable velocity considered as accurate aim.",
         _, true, 0.0);
     
-    g_cOkVerbosity = CreateConVar("sm_aimnote_ok_verbosity", "1",
+    g_cOkVerbosity = CreateConVar("sm_nitpick_ok_verbosity", "1",
         "Whether to notify player of correct shots",
         _, true, 0.0, true, 1.0);
 
