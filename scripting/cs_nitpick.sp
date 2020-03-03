@@ -112,7 +112,7 @@ public void OnPluginStart()
         _, true, 0.0);
     
     g_cOkVerbosity = CreateConVar("sm_nitpick_ok_verbosity", "1",
-        "Whether to notify player of correct shots",
+        "Whether to notify player of correct shots.",
         _, true, 0.0, true, 1.0);
 
     RegConsoleCmd("sm_nitpick", Cmd_ToggleAimNote);
@@ -525,7 +525,7 @@ void SetAimNote(int client, bool enabled, bool verbose = true)
     }
     
     if (verbose) {
-        PrintToChat(client, " \x01\x0B\x03Your AimNote is now %sabled", g_sDisEn[g_bWantsAimNote[client]]);
+        PrintToChat(client, " \x01\x0B\x03Your Nitpick feedback is now %sabled", g_sDisEn[g_bWantsAimNote[client]]);
     }
 }
 
