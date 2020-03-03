@@ -23,7 +23,7 @@ enum {
 public Plugin myinfo = {
     name = "CSGO Aim Nitpick",
     description = "CSGO aim inaccuracy checker via server plugin. Differentiate between your aim and movement mistakes for better prac!",
-    author = "Rain",
+    author = "Rainyan",
     version = PLUGIN_VERSION,
     url = "https://github.com/Rainyan/sourcemod-nt-nitpick"
 };
