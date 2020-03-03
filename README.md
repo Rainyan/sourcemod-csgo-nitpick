@@ -1,5 +1,8 @@
 # sourcemod-nt-nitpick
-CSGO aim inaccuracy check via server plugin -- Sound beeps to differentiate aim and strafe mistakes etc.
+CSGO aim inaccuracy check via server plugin -- Sound beeps to differentiate aim and strafe mistakes etc.<br />
+Differentiate between your aim and movement mistakes for better prac!
+
+This is probably best utilised on a local or clan private practise server.
 
 ### YouTube video example (please excuse the viewmodel swapping):
 
