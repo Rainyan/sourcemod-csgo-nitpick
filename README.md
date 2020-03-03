@@ -7,7 +7,8 @@ CSGO aim inaccuracy check via server plugin -- Sound beeps to differentiate aim 
 
 ### ConVars
 
-Either type the *sm_command* in console, or use the *!command* chat message format.
+Either type the relevant *sm_command* in console, or use the *!command* chat message format.<br />
+For example: *sm_nitpick* in console, or *!nitpick* in chat.
 
 ```
 sm_nitpick_help -- See the help screen for this plugin.
