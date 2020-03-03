@@ -28,6 +28,6 @@ sm_nitpick_strafe_threshold -- How much strafing inaccuracy is acceptable.
 
 ```
 sm_nitpick_version -- Version of this plugin. This is set automatically.
-sm_nitpick_vel_threshold -- Max acceptable velocity considered as accurate aim.
-sm_nitpick_ok_verbosity -- Whether to notify player of correct shots.
+sm_nitpick_vel_threshold -- Default max acceptable velocity considered as accurate aim (clients can override with their preferences).
+sm_nitpick_ok_verbosity -- Whether to notify player of correct shots (clients can override with their preferences).
 ```
