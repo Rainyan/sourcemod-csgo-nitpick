@@ -25,7 +25,7 @@ public Plugin myinfo = {
     description = "Practise stuff",
     author = "Rain",
     version = PLUGIN_VERSION,
-    url = "https://gist.github.com/Rainyan/5bc747713ea62c8d4ee5f032066e6075"
+    url = "https://github.com/Rainyan/sourcemod-nt-nitpick"
 };
 
 enum MistakeSound {
