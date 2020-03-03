@@ -104,6 +104,9 @@ Handle cookies[COOKIE_ENUM_COUNT];
 
 public void OnPluginStart()
 {
+    CreateConVar("sm_nitpick_version", PLUGIN_VERSION,
+        "CS Nitpick plugin version.", FCVAR_DONTRECORD);
+    
     g_cAimThreshold = CreateConVar("sm_nitpick_vel_threshold", "32",
         "Max acceptable velocity considered as accurate aim.",
         _, true, 0.0);
