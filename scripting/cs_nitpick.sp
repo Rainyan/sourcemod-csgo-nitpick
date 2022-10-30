@@ -5,7 +5,7 @@
 #include <sdktools>
 #include <clientprefs>
 
-#define PLUGIN_VERSION "0.2"
+#define PLUGIN_VERSION "0.3.0"
 
 enum {
     WEAPONTYPE_UNKNOWN = -1,
@@ -192,7 +192,7 @@ public void SetCookie_IntVal(int client, CookieMenuAction action, int info, char
     
     PrintToChat(client, " \x01\x0B\x03%s: %sabled",
         g_sCookiesDesc[info],
-        g_sDisEn[g_bWantsAimNote[client]]);
+        g_sDisEn[g_bWantsAimNote[client] ? 1 : 0]);
 }
 
 void SetCookie_NitLevel(int client, CookieMenuAction action, any info, char[] buffer, int maxlen)
@@ -306,7 +306,7 @@ public void OnPlayerRunCmdPost(int client, int buttons, int impulse,
     int cmdnum, int tickcount, int seed, const int mouse[2])
 {
     if (g_bWantsAimNote[client] && g_bHoldsShootable[client] && g_iNitLvl[client] > NOTE_NONE) {
-        static int prevButtons[MAXPLAYERS+1] = 0;
+        static int prevButtons[MAXPLAYERS+1] = {0, ...};
         static float currentVel[MAXPLAYERS+1][3];
         if (buttons & IN_ATTACK) {
             if (prevButtons[client] & IN_ATTACK) {
@@ -437,7 +437,8 @@ public Action Cmd_SetUseSound(int client, int argc)
     g_bUseSounds[client] = view_as<bool>(argInt);
     SetClientCookie(client, cookies[COOKIE_USE_SOUND], arg);
     
-    PrintToChat(client, " \x01\x0B\x03Playing sound feedback is now: %sabled", g_sDisEn[g_bUseSounds[client]]);
+    PrintToChat(client, " \x01\x0B\x03Playing sound feedback is now: %sabled",
+        g_sDisEn[g_bUseSounds[client] ? 1 : 0]);
     
     return Plugin_Handled;
 }
@@ -457,12 +458,13 @@ public Action Cmd_SetOnlyFails(int client, int argc)
     g_bOnlyFails[client] = view_as<bool>(argInt);
     SetClientCookie(client, cookies[COOKIE_ONLY_FAILS], arg);
     
-    PrintToChat(client, " \x01\x0B\x03Only mistake announcing is now: %sabled", g_sDisEn[g_bOnlyFails[client]]);
+    PrintToChat(client, " \x01\x0B\x03Only mistake announcing is now: %sabled",
+        g_sDisEn[g_bOnlyFails[client] ? 1 : 0]);
     
     return Plugin_Handled;
 }
 
-public Action AttackHappened(Event event, const char[] name, bool dontBroadcast)
+public void AttackHappened(Event event, const char[] name, bool dontBroadcast)
 {
     int attacker = GetClientOfUserId(event.GetInt("attacker"));
     int victim = GetClientOfUserId(event.GetInt("userid"));
@@ -527,7 +529,8 @@ void SetAimNote(int client, bool enabled, bool verbose = true)
     }
     
     if (verbose) {
-        PrintToChat(client, " \x01\x0B\x03Your Nitpick feedback is now %sabled", g_sDisEn[g_bWantsAimNote[client]]);
+        PrintToChat(client, " \x01\x0B\x03Your Nitpick feedback is now %sabled",
+            g_sDisEn[g_bWantsAimNote[client] ? 1 : 0]);
     }
 }
 
