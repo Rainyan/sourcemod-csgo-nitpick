@@ -8,6 +8,10 @@ This is probably best utilised on a local or clan private practise server.
 
 <a target="_blank" href="https://www.youtube.com/watch?v=XCA0KfqKmDc"><img src="https://img.youtube.com/vi/XCA0KfqKmDc/0.jpg" alt="https://img.youtube.com/vi/XCA0KfqKmDc/0.jpg" /></a>
 
+### Compiling
+
+Supported SourceMod versions: 1.8 or newer
+
 ### Client commands
 
 Either type the relevant *sm_command* in console, or use the *!command* chat message format.<br />
